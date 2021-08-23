@@ -92,7 +92,7 @@ nav{
 }
 .showcase-btn .current{
     color: #eee;
-    background-color: rgb(212, 47, 75);
+    background-color: #d42f4b;
 }
 .showcase-btn1{
     padding: 1em 2em;
@@ -355,10 +355,13 @@ nav{
     text-align: center;
     align-items: center;
     margin-bottom: 1em;
-    transition: display 1s ease-in-out;
+    opacity: 0;
+    transition: opacity 2s ease-in;
+    transition: display 1s ease-in ;
 }
 .customer.current{
     display: flex;
+    opacity: 1;
 }
 .customer img{
     width: 20%;
@@ -610,46 +613,65 @@ footer{
         margin: 0;
     }
     nav{
-        position: absolute;
+        position: fixed;
         top: 0;
         right: 0;
-        width: 50%;
         z-index: 2;
+    }
+    #logo{
+        position: absolute;
+        left: 1em;
+        top: 1em;
     }
     .line{
     height:3px;
     width:30px;
     background:#000;
     margin:5px;
-  }
-
-  .hamburger{
-    z-index:2;
+    }
+    .hamburger{
     position:absolute;
-    right:0;
-    top:0;
+    right:1em;
+    top:1em;
     cursor:pointer;
   }
+    .nav-links{
+        width: 90%;
+        height: 100vh;
+        display: flex;
+        flex-flow: column nowrap;
+        background-color:  #e94560;
+        justify-content: space-evenly;
+        align-items: flex-start;
+        position: absolute;
+        padding: 0 1em;
+        top: 0;
+        right: -90%;
+    }
+    .open{
+        right: 0;
+        z-index: 2;
+    }
+    .h-open{
+        z-index: 3;
+    }
+    .h-open .line{
+        background-color: #fff;
+    }
+    .nav-links li a{
+        color: #fff;
+    }
 
-  .nav-links{
-    background-color: #ddd;
-    flex-direction:column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    padding: 0 1em;
-    clip-path:circle(0px at 100% -50%);
-    transition:all 0.5s ease-out;
-  }
-  .open{
-    clip-path:circle(1000px at 90% -20%);
-  }
+    .nav-links li a:hover{
+        border-bottom: none;
+    }
     .showcase-content1{
         display: flex;
         flex-flow: column nowrap;
         justify-content: center;
         align-items: center;
         text-align: center;
-        margin-top: -3em;
+    
     }
     .showcase-content2{
         display: none;

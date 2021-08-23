@@ -4,13 +4,11 @@ const btn2 = document.querySelector('.showcase-btn2');
 
 btn1.addEventListener('click',()=>{
     const current = document.querySelector(".current");
-    console.log(current)
     current.classList.remove('current');
     btn1.classList.add("current");
 })
 btn2.addEventListener('click', () => {
     const current = document.querySelector(".current");
-    console.log(current)
     current.classList.remove('current');
     btn2.classList.add("current");
 })
@@ -22,6 +20,7 @@ hamburger.addEventListener('click', animate);
 
 function animate() {
     navList.classList.toggle('open')
+    hamburger.classList.toggle('h-open')
 }
 
 /* testimonial manipulation */
